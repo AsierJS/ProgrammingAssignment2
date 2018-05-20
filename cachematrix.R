@@ -1,11 +1,8 @@
 ## The first function, makeMatrix creates a special "matrix", which is really a list containing a function to
-##    set the value of the vecctor
-##    get the value of the vector
-##    set the value of the inverse
-##    get the value of the inverse
-
-
-## Write a short comment describing this function
+##    set the value of the matrix
+##    get the value of the matrix
+##    setinv the value of the inverse
+##    getinv the value of the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
   
@@ -20,10 +17,11 @@ makeCacheMatrix <- function(x = matrix()) {
     list(set =  set, get = get, setinv = setinv, getinv = getinv)
 }
 
-## Write a short comment describing this function
+## Calculate the inverse of the special "matrix" created with the above
+## function, reusing cached result if it is available
 
 cacheSolve <- function(x, ...) {
-  ## Return a matrix that is the inverse of 'x'
+
   m <- x$getinv()
   if(!is.null(m)) {
     message("getting cached data")
